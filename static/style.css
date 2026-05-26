@@ -58,16 +58,21 @@ button:hover {
 }
 
 .score-circle {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    background: #22c55e;
+    margin: 40px auto;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    margin: 40px auto;
+    font-weight: bold;
+    color: white;
     box-shadow: 0 0 40px rgba(34,197,94,0.6);
+    border: 5px solid #22c55e;
 }
 
 .tips-box {
