@@ -118,11 +118,13 @@ QUESTIONS = [
 
 
 def calculate_results(answers):
+
     total_score = 0
     max_score = 0
     tips = []
 
     for question in QUESTIONS:
+
         qid = question["id"]
         value = int(answers.get(qid, 0))
 
@@ -134,18 +136,37 @@ def calculate_results(answers):
 
     percentage = round((total_score / max_score) * 100)
 
-    if percentage < 25:
-        category = "Low impact"
-        message = "Your AI habits are relatively light, but there is still room to be greener."
-    elif percentage < 50:
-        category = "Moderate impact"
-        message = "You use AI regularly. Small habit changes could reduce your footprint."
-    elif percentage < 75:
-        category = "High impact"
-        message = "Your AI usage may be environmentally heavy. Try using AI more intentionally."
+    if percentage <= 10:
+        category = "Extremely Low Impact 🌱"
+        message = "Your AI usage is very environmentally conscious."
+
+    elif percentage <= 20:
+        category = "Low Impact ✅"
+        message = "Your AI habits are relatively sustainable."
+
+    elif percentage <= 40:
+        category = "Low-Moderate Impact 🍃"
+        message = "Your AI usage is moderate but could still improve."
+
+    elif percentage <= 50:
+        category = "Moderate Impact ⚡"
+        message = "You use AI regularly. Small changes could reduce impact."
+
+    elif percentage <= 60:
+        category = "High-Moderate Impact 🌍"
+        message = "Your AI habits may be using significant energy."
+
+    elif percentage <= 70:
+        category = "High Impact 🔥"
+        message = "Your AI usage is environmentally heavy."
+
+    elif percentage <= 80:
+        category = "Very High Impact 🚨"
+        message = "Your AI usage has a large estimated environmental impact."
+
     else:
-        category = "Very high impact"
-        message = "Your AI usage is intense. Reducing regenerations, large uploads, and heavy tools would help a lot."
+        category = "Extremely High Impact ☠️"
+        message = "Your AI usage is extremely resource intensive."
 
     if not tips:
         tips = [
@@ -156,15 +177,13 @@ def calculate_results(answers):
 
     estimated_energy = round(total_score * 0.002, 3)
 
-    # SCI-inspired educational estimate:
-    # SCI = (E × I + M) per R
-    # E = estimated energy
-    # I = example carbon intensity
-    # M = small embodied hardware factor
-    # R = one user quiz session
     carbon_intensity = 0.4
     embodied_factor = 0.02
-    sci_estimate = round((estimated_energy * carbon_intensity) + embodied_factor, 3)
+
+    sci_estimate = round(
+        (estimated_energy * carbon_intensity) + embodied_factor,
+        3
+    )
 
     return {
         "percentage": percentage,
@@ -179,18 +198,28 @@ def calculate_results(answers):
 
 @app.route("/")
 def home():
+
     shuffled_questions = QUESTIONS.copy()
     random.shuffle(shuffled_questions)
-    return render_template("index.html", questions=shuffled_questions)
+
+    return render_template(
+        "index.html",
+        questions=shuffled_questions
+    )
 
 
 @app.route("/results", methods=["POST"])
 def results():
+
     answers = request.form.to_dict()
+
     result = calculate_results(answers)
-    return render_template("results.html", result=result)
+
+    return render_template(
+        "results.html",
+        result=result
+    )
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
