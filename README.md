@@ -5,8 +5,6 @@ Lowcarbon.ai is a personalised web application designed to encourage users to th
 
 The website asks users a series of questions about their AI usage patterns and then calculates how environmentally harmful their usage may be. Based on the responses, the system provides personalised recommendations to help reduce unnecessary AI usage and promote sustainable digital habits.
 
-For this project we used AI-assisted development tools to accelerate prototyping and focus on the sustainability concept, frontend integration, deployment, and overall user experience.
-
 ## Features
 - Personalised AI usage assessment
 - Environmental impact percentage calculation
