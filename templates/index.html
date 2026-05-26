@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LowCarbon.ai</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌍 LowCarbon.ai</h1>
+
+    <p class="subtitle">
+        Discover how your AI habits impact the environment.
+    </p>
+
+    <form action="/results" method="POST">
+
+        {% for question in questions %}
+
+        <div class="question-card">
+
+            <h2>{{ question.text }}</h2>
+
+            {% for option, score in question.options %}
+
+            <label class="option">
+                <input type="radio"
+                       name="{{ question.id }}"
+                       value="{{ score }}"
+                       required>
+
+                {{ option }}
+            </label>
+
+            {% endfor %}
+
+        </div>
+
+        {% endfor %}
+
+        <button type="submit">
+            Calculate My Impact
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

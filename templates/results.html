@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Your AI Impact Results</h1>
+
+    <div class="score-circle">
+        {{ result.percentage }}%
+    </div>
+
+    <h2>{{ result.category }}</h2>
+
+    <p>
+        Estimated AI energy usage:
+        <strong>{{ result.energy }} kWh</strong>
+    </p>
+
+    <div class="tips-box">
+
+        <h3>🌱 Personalised Sustainability Tips</h3>
+
+        <ul>
+
+            {% for tip in result.tips %}
+
+            <li>{{ tip }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <a href="/">
+        <button>Try Again</button>
+    </a>
+
+</div>
+
+</body>
+</html>
