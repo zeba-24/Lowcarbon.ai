@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0f172a, #064e3b);
     color: white;
 }
