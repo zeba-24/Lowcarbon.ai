@@ -71,6 +71,7 @@ button:hover {
     font-size: 3rem;
     font-weight: bold;
     color: black;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
     box-shadow: 0 0 40px rgba(34,197,94,0.6);
     border: 5px solid #22c55e;
 }
