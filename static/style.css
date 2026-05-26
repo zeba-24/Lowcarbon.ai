@@ -14,15 +14,12 @@ body {
 
 h1 {
     text-align: center;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
     font-size: 5rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    background: linear-gradient(90deg, #22c55e, #4ade80, #86efac);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    font-weight: bold;
+    color: #bbf7d0;
     margin-bottom: 10px;
-    text-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
 }
 
 .subtitle {
