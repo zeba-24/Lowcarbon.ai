@@ -34,4 +34,5 @@ The aim of this project is to raise awareness about the environmental impact of 
 
 Live Website:
 https://lowcarbon-ai.onrender.com/
+
 Developing a personalised website on how to use AI that is less harmful for the environment and the planet.  
