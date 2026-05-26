@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Lucida Handwriting", "Brush Script MT", cursive;
     background: linear-gradient(135deg, #0f172a, #064e3b);
     color: white;
 }
