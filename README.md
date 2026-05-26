@@ -1,5 +1,5 @@
-# Lowcarbon.ai
-## Overview
+# Lowcarbon.ai 
+## Created as part of the MMU sustainability Hackathon 2026
 
 Lowcarbon.ai is a personalised web application designed to encourage users to think more consciously about their AI usage and its environmental impact. Our goal was to show that even small digital habits can contribute to a more sustainable future.
 
